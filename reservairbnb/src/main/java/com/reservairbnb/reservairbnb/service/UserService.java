@@ -22,4 +22,11 @@ public class UserService {
         public List<User> obtenerTodos() {
             return userRepository.findAll();
         }
+    public User findById(Long id) {
+        return userRepository.findById(id).orElse(null);
+    }
+
+    public void delete(Long id) {
+        userRepository.deleteById(id);
+    }
 }
